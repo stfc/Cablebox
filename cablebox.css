@@ -42,4 +42,10 @@ tr th:not(:first-child) {
     text-align: center;
 }
 
+
+// Fix for not doing tables in columns in firefox
 * { min-width:0 }
+table.pdu {
+    float: left;
+    width: auto;
+}
