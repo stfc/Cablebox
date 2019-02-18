@@ -1,0 +1,5 @@
+{
+  "netbox_url": "https://mynetbox.host/api/",
+  "netbox_api_key": "0123456789abcdef",
+  "pdu_url": "./commands.php"
+}

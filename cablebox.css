@@ -1,0 +1,45 @@
+table.pdu {
+	border: 0px;
+	padding: 1px;
+}
+
+.socket-noinfo {
+	background-color: gray;
+}
+
+.socket-on {
+	background-color: green;
+}
+
+.socket-off {
+	background-color: orange;
+}
+
+.socket-unsupported {
+	background-color: red;
+}
+
+.chassis {
+	background-color: skyblue;
+}
+
+td:first-child {
+	padding-right: 0px;
+	border-right: 0px;
+}
+
+div.children {
+	padding-left: 10px;
+	padding-bottom: 10px;
+}
+
+div.children table {
+	border-right: 0px;
+	margin-bottom: 0px;
+}
+
+tr th:not(:first-child) {
+    text-align: center;
+}
+
+* { min-width:0 }
