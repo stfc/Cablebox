@@ -291,13 +291,13 @@ function power_outlet_callback (rack_id, data) {
       if (parent_pdu < 0) {
         parent_pdu = val.device.id
       }
-      if (val.connected_port == null) {
+      if (val.connected_endpoint == null) {
 		html_string += '>EMPTY'  
       } else {
         // Use dummy name that will be replaced later
-		html_string += 'id=power-' + val.connected_port + '>&nbsp;'
+		html_string += 'id=power-' + val.connected_endpoint.id + '>&nbsp;'
         // Add the port to the list to be queried
-        outlet_query_list.push(val.connected_port)
+        outlet_query_list.push(val.connected_endpoint.id)
       }
       // Extract the socket number by assuming it will always be the last digits of the name of the outlet
 	  socket_number = extract_number.exec(val.name)
@@ -357,7 +357,7 @@ $(function () {
 
     // If we don't know which netbox devices are pdus, initiate a query for them
     if (netbox_pdu_types.length == 0) {
-      netbox_query('dcim/device-types/', 'is_pdu=True', pdu_types_callback)
+      netbox_query('dcim/device-types/', 'power_outlets=True', pdu_types_callback)
     }
 
     // If we have a rack group parameter display the rack group, otherwise show the intro page (list of rackgroups)
